@@ -1,0 +1,22 @@
+{
+  "login": "Login",
+  "my_profile": "My Profile",
+  "enter_email": "Please Enter Email",
+  "enter_name": "Please Enter Name",
+  "enter_skills": "Please Enter Skills",
+  "enter_experience": "Please Enter Work Experience",
+  "enter_pwd": "Please Enter Password",
+  "enter_valid_password": "Please Enter Valid Password",
+  "enter_valid_email": "Please Enter Valid Email",
+  "enter_empty_email_message": "Email can't be empty",
+  "enter_empty_pwd_message": "Password can't be empty",
+  "remember_me": "Remember me",
+  "password_limitation_text": "Password must contain at least 8 characters.",
+  "password_content_validation_text": "Including Upper/Lowercase , Numbers and Special Characters(Symbols)",
+  "user_does_not_exist": "User does not exists",
+  "confirmation": "Confirmation",
+  "logout_confirmation_message": "Are you sure you want to log out ?",
+  "logout": "Log out",
+  "cancel": "Cancel",
+  "save": "Save"
+}
