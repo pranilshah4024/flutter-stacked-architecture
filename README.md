@@ -1,5 +1,5 @@
 # My Profile
-This is a showcase flutter project, developed with stacked architecture.
+This is a showcase demo flutter project, developed with stacked architecture.
 
 #### System Requirements
 For the setup project :
@@ -21,5 +21,5 @@ For the setup project :
 1. Regenerate Assets `dart run build_runner build --delete-conflicting-outputs`
 
 #### Credentials
-Name : Pranil Shah
-Email : pranilshah4024@gmail.com
+- Name : Pranil Shah
+- Email : pranilshah4024@gmail.com
