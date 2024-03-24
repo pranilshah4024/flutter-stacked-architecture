@@ -21,5 +21,5 @@ For the setup project :
 1. Regenerate Assets `dart run build_runner build --delete-conflicting-outputs`
 
 #### Credentials
-- Name : Pranil Shah
-- Email : pranilshah4024@gmail.com
+- Password : Pranil Shah
+- Email/Username : pranilshah4024@gmail.com
