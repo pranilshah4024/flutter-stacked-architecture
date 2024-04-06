@@ -1,0 +1,62 @@
+name: Flutter
+# will trigger on push of "main" branch
+on:
+  push:
+    branches: [ "main" ]
+
+
+
+jobs:   #here we specify the jobs - We could have multiple jobs
+  build:  #name it something meaningful
+    runs-on: macos-latest   #runner: select a machine to use
+
+    steps:
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: "temurin"
+          java-version: 11
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.16.9'
+          channel: 'stable'
+      - run: flutter --version
+
+      - name: Install dependencies
+        run: flutter pub get # action
+
+      - name: Generate Dependencies
+        run: dart run build_runner build --delete-conflicting-outputs # action
+
+      #      - name: Run tests
+      #        run: flutter test
+
+      - name: Build android apk and appBundle
+        run: flutter build apk --release
+
+      - name: Build android appBundle
+        run: flutter build appbundle --release
+
+      - name: Build android ios
+        run: flutter build ios --release --no-codesign
+
+      - run: |
+          echo CACHE-PATH=${{ steps.flutter-action.outputs.CACHE-PATH }}
+          echo CACHE-KEY=${{ steps.flutter-action.outputs.CACHE-KEY }}
+          echo CHANNEL=${{ steps.flutter-action.outputs.CHANNEL }}
+          echo VERSION=${{ steps.flutter-action.outputs.VERSION }}
+          echo ARCHITECTURE=${{ steps.flutter-action.outputs.ARCHITECTURE }}
+          echo PUB-CACHE-PATH=${{ steps.flutter-action.outputs.PUB-CACHE-PATH }}
+          echo PUB-CACHE-KEY=${{ steps.flutter-action.outputs.PUB-CACHE-KEY }}
+        shell: bash
+
+#      - run: ls build/app/outputs/flutter-apk
+#          # - run: ls build/app/outputs/bundle/release
+#          - name: Upload artifact to Firebase App Distribution
+#      - uses: wzieba/Firebase-Distribution-Github-Action@v1
+#        with:
+#            appId: ${{secrets.APP_ID}}
+#            serviceCredentialsFileContent: ${{secrets.CREDENTIAL_FILE_CONTENT}}
+#            groups: sparrow_team
+#            file: build/app/outputs/flutter-apk/app-debug.apk

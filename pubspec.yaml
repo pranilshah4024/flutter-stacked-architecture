@@ -30,6 +30,9 @@ dependencies:
   intl: 0.18.1
 
 
+  # Firebase
+  firebase_core: 2.28.0
+
 
   # Utils
   image_picker: 1.0.7

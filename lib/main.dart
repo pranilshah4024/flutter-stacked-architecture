@@ -10,6 +10,7 @@ Medium : https://medium.com/@pranilshah4024
 
 */
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:get_it/get_it.dart';
 import 'package:my_profile/app.dart';
 import 'package:my_profile/exports.dart';
@@ -18,6 +19,7 @@ GetIt locator = GetIt.instance;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPref.getInstance();
+  await Firebase.initializeApp();
   locator.registerLazySingleton<NavigationService>(() => NavigationService());
   /// <<<<<<<<<<<<<<<<<<<<<<< System Configurations >>>>>>>>>>>>>>>>>>>>>>>>>
   SystemChrome.setPreferredOrientations([
