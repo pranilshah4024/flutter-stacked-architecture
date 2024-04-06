@@ -19,7 +19,7 @@ jobs:   #here we specify the jobs - We could have multiple jobs
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.16.9'
+          flutter-version: '3.19.1'
           channel: 'stable'
       - run: flutter --version
 
